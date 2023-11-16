@@ -308,7 +308,10 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner
+        imageURL="/imagens/banner.png"
+        textAlt="O banner principal da página do Organo"
+      />
       {form ? (
         <Formulario
           cadastrarTime={cadastrarTime}
