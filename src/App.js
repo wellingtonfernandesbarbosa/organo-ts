@@ -293,10 +293,11 @@ function App() {
     return times;
   }
 
-  function resolverFavorito(id) {
+  function aoFavoritar(id) {
     setColaboradores(
       colaboradores.map((colaborador) => {
         if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+        console.log(typeof(colaborador.id))
         return colaborador;
       })
     );
@@ -336,7 +337,7 @@ function App() {
         </div>
         {times.map((time, indice) => (
           <Time
-            aoFavoritar={resolverFavorito}
+            aoFavoritar={aoFavoritar}
             mudarCor={mudarCorDoTime}
             key={indice}
             time={time}

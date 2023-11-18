@@ -1,4 +1,4 @@
-import "./CampoTexto.css";
+ import "./CampoTexto.css";
 
 interface CampoTextoProps {
   type : string
