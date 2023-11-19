@@ -3,9 +3,21 @@ import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
 import { useState } from "react";
 import "./Formulario.css";
+import { IColaborador } from "../compartilhado/IColaborador";
+
+interface FormularioProps {
+  aoColaboradorCadastrado: (colaborador: IColaborador) => void;
+  cadastrarTime: (valor: Time) => void
+  times: string[];
+}
+
+interface Time {
+  nome: string
+  cor: string
+}
 
 
-const Formulario = (props) => {
+const Formulario = (props: FormularioProps) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -13,7 +25,7 @@ const Formulario = (props) => {
   const [nomeTime, setNomeTime] = useState("");
   const [corTime, setCorTime] = useState("");
 
-  const aoSalvar = (evento) => {
+  const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
     props.aoColaboradorCadastrado({
       nome,
@@ -26,6 +38,11 @@ const Formulario = (props) => {
     setCargo("");
     setImagem("");
     setTime("");
+  };
+
+  const novoTime: Time = {
+    nome: nomeTime,
+    cor: corTime,
   };
 
   return (
@@ -64,7 +81,7 @@ const Formulario = (props) => {
       <form
         onSubmit={(evento) => {
           evento.preventDefault();
-          props.cadastrarTime({ nome: nomeTime, cor: corTime });
+          props.cadastrarTime(novoTime);
         }}
       >
         <h2>Preencha os dados para criar um novo time</h2>
@@ -77,12 +94,13 @@ const Formulario = (props) => {
         />
         <CampoTexto
           obrigatorio
-          type='color'
+          typeColor='color'
           label="Cor"
           placeholder="Digite a cor do time"
           valor={corTime}
           aoAlterado={(valor) => setCorTime(valor)}
         />
+        
         <Botao>Criar um novo time</Botao>
       </form>
     </section>

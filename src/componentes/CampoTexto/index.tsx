@@ -1,16 +1,16 @@
  import "./CampoTexto.css";
 
 interface CampoTextoProps {
-  type : string
+  aoAlterado : (valor: string) => void
+  typeColor ?: string
   label : string
   placeholder : string
   valor : string
-  aoAlterado : (valor: string) => void
-  obrigatorio: boolean
+  obrigatorio?: boolean
 }
 
 const CampoTexto = ({
-  type = 'text',
+  typeColor = 'text',
   label,
   placeholder,
   valor,
@@ -24,10 +24,10 @@ const CampoTexto = ({
   };
 
   return (
-    <div className={`campo campo-${type}`}>
+    <div className={`campo campo-${typeColor}`}>
       <label>{label}</label>
       <input
-        type={type}
+        type={typeColor}
         value={valor}
         onChange={aoDigitado}
         required={obrigatorio}

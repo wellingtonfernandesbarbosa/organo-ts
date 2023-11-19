@@ -5,8 +5,8 @@ import { IColaborador } from "../compartilhado/IColaborador";
 interface ColaboradorProps {
   colaborador: IColaborador;
   cor: string;
-  aoDeletar: (valor: string) => void;
-  aoFavoritar: (valor: string) => void;
+  aoDeletar: (valor: string| undefined) => void;
+  aoFavoritar: (valor: string | undefined) => void;
 }
 
 const Colaborador = ({ colaborador, cor, aoDeletar, aoFavoritar }: ColaboradorProps) => {
