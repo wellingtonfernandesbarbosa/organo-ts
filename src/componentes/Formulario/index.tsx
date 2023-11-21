@@ -4,20 +4,19 @@ import Botao from "../Botao";
 import { useState } from "react";
 import "./Formulario.css";
 import { IColaborador } from "../compartilhado/IColaborador";
+import { ITime } from "../compartilhado/ITime";
 
 interface FormularioProps {
   aoColaboradorCadastrado: (colaborador: IColaborador) => void;
-  cadastrarTime: (valor: Time) => void
+  cadastrarTime: (valor: ITime) => void;
   times: string[];
 }
 
-interface Time {
-  nome: string
-  cor: string
-}
-
-
-const Formulario = (props: FormularioProps) => {
+const Formulario = ({
+  aoColaboradorCadastrado,
+  cadastrarTime,
+  times,
+}: FormularioProps) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -27,7 +26,7 @@ const Formulario = (props: FormularioProps) => {
 
   const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
-    props.aoColaboradorCadastrado({
+    aoColaboradorCadastrado({
       nome,
       cargo,
       imagem,
@@ -40,7 +39,7 @@ const Formulario = (props: FormularioProps) => {
     setTime("");
   };
 
-  const novoTime: Time = {
+  const novoTime: ITime = {
     nome: nomeTime,
     cor: corTime,
   };
@@ -71,7 +70,7 @@ const Formulario = (props: FormularioProps) => {
         />
         <ListaSuspensa
           obrigatorio={true}
-          itens={props.times}
+          itens={times}
           label="Time"
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
@@ -81,7 +80,7 @@ const Formulario = (props: FormularioProps) => {
       <form
         onSubmit={(evento) => {
           evento.preventDefault();
-          props.cadastrarTime(novoTime);
+          cadastrarTime(novoTime);
         }}
       >
         <h2>Preencha os dados para criar um novo time</h2>
@@ -94,13 +93,14 @@ const Formulario = (props: FormularioProps) => {
         />
         <CampoTexto
           obrigatorio
-          typeColor='color'
+          typeColor="color"
           label="Cor"
           placeholder="Digite a cor do time"
           valor={corTime}
+          
           aoAlterado={(valor) => setCorTime(valor)}
         />
-        
+
         <Botao>Criar um novo time</Botao>
       </form>
     </section>
