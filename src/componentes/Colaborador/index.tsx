@@ -3,13 +3,20 @@ import "./Colaborador.css";
 import { IColaborador } from "../compartilhado/IColaborador";
 
 interface ColaboradorProps {
+  aoFavoritar: (valor: string | undefined) => void;
+  aoDeletar: (valor: string | undefined) => void;
   colaborador: IColaborador;
   cor: string;
-  aoDeletar: (valor: string| undefined) => void;
-  aoFavoritar: (valor: string | undefined) => void;
+  data: string;
 }
 
-const Colaborador = ({ colaborador, cor, aoDeletar, aoFavoritar }: ColaboradorProps) => {
+const Colaborador = ({
+  aoFavoritar,
+  aoDeletar,
+  colaborador,
+  cor,
+  data
+}: ColaboradorProps) => {
   function favoritar() {
     aoFavoritar(colaborador.id);
   }
@@ -24,9 +31,9 @@ const Colaborador = ({ colaborador, cor, aoDeletar, aoFavoritar }: ColaboradorPr
       <AiFillCloseCircle
         className="deletar"
         size={25}
-        onClick={(event: React.MouseEvent<SVGElement, MouseEvent>) =>
-          aoDeletar(colaborador.id)
-        }
+        onClick={() => {
+          aoDeletar(colaborador.id);
+        }}
       />
       <div className="cabecalho" style={{ backgroundColor: cor }}>
         <img src={colaborador.imagem} alt={colaborador.nome}></img>
@@ -34,6 +41,7 @@ const Colaborador = ({ colaborador, cor, aoDeletar, aoFavoritar }: ColaboradorPr
       <div className="rodapeColaborador">
         <h4>{colaborador.nome}</h4>
         <h5>{colaborador.cargo}</h5>
+        <h5>{new Date(data).toLocaleDateString('pt-br')}</h5>
         <div className="favoritar">
           {colaborador.favorito ? (
             <AiFillHeart color="#ff0000" {...propsFavorito} />

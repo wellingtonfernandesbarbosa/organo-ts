@@ -1,22 +1,23 @@
- import "./CampoTexto.css";
+import "./CampoTexto.css";
 
 interface CampoTextoProps {
-  aoAlterado : (valor: string) => void
-  typeColor ?: string
-  label : string
-  placeholder : string
-  valor : string
-  obrigatorio?: boolean
+  aoAlterado: (valor: string) => void;
+  typeColor?: string;
+  label: string;
+  placeholder: string;
+  valor: string;
+  obrigatorio?: boolean;
+  tipo?: "string" | "text" | "password" | "date" | "email" | "number" | "color";
 }
 
 const CampoTexto = ({
-  typeColor = 'text',
   label,
   placeholder,
   valor,
   aoAlterado,
   obrigatorio = false,
-} : CampoTextoProps) => {
+  tipo = 'text'
+}: CampoTextoProps) => {
   const placeholdModificada = `${placeholder}...`;
 
   const aoDigitado = (evento: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,10 +25,10 @@ const CampoTexto = ({
   };
 
   return (
-    <div className={`campo campo-${typeColor}`}>
+    <div className={`campo campo-${tipo}`}>
       <label>{label}</label>
       <input
-        type={typeColor}
+        type={tipo}
         value={valor}
         onChange={aoDigitado}
         required={obrigatorio}

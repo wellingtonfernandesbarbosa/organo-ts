@@ -9,7 +9,7 @@ interface ListaSuspensaProps {
   itens: string[];
 }
 
-const ListaSuspensa = ({aoAlterado, label, times, valor, itens, obrigatorio}: ListaSuspensaProps) => {
+const ListaSuspensa = ({aoAlterado, label, valor, itens, obrigatorio}: ListaSuspensaProps) => {
   return (
     <div className="lista-suspensa">
       <label>{label}</label>

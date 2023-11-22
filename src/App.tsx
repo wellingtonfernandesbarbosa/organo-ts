@@ -57,6 +57,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg",
       time: times[0].nome,
+      data: "09-09-2016"
     },
     {
       id: uuidv4(),
@@ -66,6 +67,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg",
       time: times[0].nome,
+      data: "03-04-2016"
     },
     {
       id: uuidv4(),
@@ -75,6 +77,7 @@ function App() {
       imagem:
         "	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg",
       time: times[0].nome,
+      data: "07-06-2020"
     },
     {
       id: uuidv4(),
@@ -84,6 +87,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg",
       time: times[0].nome,
+      data: "10-06-2016"
     },
     {
       id: uuidv4(),
@@ -93,6 +97,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg",
       time: times[1].nome,
+      data: "04-08-2021"
     },
     {
       id: uuidv4(),
@@ -102,6 +107,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg",
       time: times[1].nome,
+      data: "03-06-2022"
     },
     {
       id: uuidv4(),
@@ -111,6 +117,7 @@ function App() {
       imagem:
         "	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg",
       time: times[1].nome,
+      data: "12-08-2023"
     },
     {
       id: uuidv4(),
@@ -120,6 +127,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg",
       time: times[1].nome,
+      data: "11-10-2021"
     },
     {
       id: uuidv4(),
@@ -129,6 +137,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg",
       time: times[2].nome,
+      data: "05-12-2017"
     },
     {
       id: uuidv4(),
@@ -138,6 +147,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg",
       time: times[2].nome,
+      data: "11-03-2018"
     },
     {
       id: uuidv4(),
@@ -147,6 +157,7 @@ function App() {
       imagem:
         "	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg",
       time: times[2].nome,
+      data: "09-12-2016"
     },
     {
       id: uuidv4(),
@@ -156,6 +167,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg",
       time: times[2].nome,
+      data: "11-10-2021"
     },
     {
       id: uuidv4(),
@@ -165,6 +177,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg",
       time: times[3].nome,
+      data: "05-12-2017"
     },
     {
       id: uuidv4(),
@@ -174,6 +187,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg",
       time: times[3].nome,
+      data: "05-03-2018"
     },
     {
       id: uuidv4(),
@@ -183,6 +197,7 @@ function App() {
       imagem:
         "	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg",
       time: times[3].nome,
+      data: "05-12-2016"
     },
     {
       id: uuidv4(),
@@ -192,6 +207,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg",
       time: times[3].nome,
+      data: "11-10-2021"
     },
     {
       id: uuidv4(),
@@ -201,6 +217,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg",
       time: times[4].nome,
+      data: "07-08-2021"
     },
     {
       id: uuidv4(),
@@ -210,6 +227,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg",
       time: times[4].nome,
+      data: "09-10-2020"
     },
     {
       id: uuidv4(),
@@ -219,6 +237,7 @@ function App() {
       imagem:
         "	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg",
       time: times[4].nome,
+      data: "12-10-2021"
     },
     {
       id: uuidv4(),
@@ -228,6 +247,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg",
       time: times[4].nome,
+      data: "11-08-2021"
     },
     {
       id: uuidv4(),
@@ -237,6 +257,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg",
       time: times[5].nome,
+      data: "03-08-2021"
     },
     {
       id: uuidv4(),
@@ -246,6 +267,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/daniel-artine.1647533644.jpeg",
       time: times[5].nome,
+      data: "08-10-2020"
     },
     {
       id: uuidv4(),
@@ -255,6 +277,7 @@ function App() {
       imagem:
         "	https://www.alura.com.br/assets/img/lideres/guilherme-lima.1647533644.jpeg",
       time: times[5].nome,
+      data: "10-10-2021"
     },
     {
       id: uuidv4(),
@@ -264,6 +287,7 @@ function App() {
       imagem:
         "https://www.alura.com.br/assets/img/lideres/paulo-silveira.1647533644.jpeg",
       time: times[5].nome,
+      data: "08-12-2021"
     },
   ]
   

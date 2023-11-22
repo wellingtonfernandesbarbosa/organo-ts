@@ -34,6 +34,7 @@ const Time = ({ time, colaboradores, aoDeletar, mudarCor, aoFavoritar }: TimePro
                 cor={time.cor}
                 aoDeletar={aoDeletar}
                 aoFavoritar={aoFavoritar}
+                data={colaborador.data}
               />
             );
           })}

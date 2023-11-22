@@ -1,7 +1,7 @@
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import Botao from "../Botao";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Formulario.css";
 import { IColaborador } from "../compartilhado/IColaborador";
 import { ITime } from "../compartilhado/ITime";
@@ -23,6 +23,14 @@ const Formulario = ({
   const [time, setTime] = useState("");
   const [nomeTime, setNomeTime] = useState("");
   const [corTime, setCorTime] = useState("");
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+  
+    return () => {
+      console.log(data)
+    }
+  }, [data])
 
   const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
@@ -31,6 +39,7 @@ const Formulario = ({
       cargo,
       imagem,
       time,
+      data,
     });
 
     setNome("");
@@ -68,6 +77,13 @@ const Formulario = ({
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
         />
+        <CampoTexto
+          label="Data de entrada no time"
+          placeholder=""
+          valor={data}
+          aoAlterado={(valor) => setData(valor)}
+          tipo="date"
+        />
         <ListaSuspensa
           obrigatorio={true}
           itens={times}
@@ -93,7 +109,7 @@ const Formulario = ({
         />
         <CampoTexto
           obrigatorio
-          typeColor="color"
+          tipo="color"
           label="Cor"
           placeholder="Digite a cor do time"
           valor={corTime}
