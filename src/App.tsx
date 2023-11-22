@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
+import { IColaborador } from "./componentes/compartilhado/IColaborador";
+import { ITime } from "./componentes/compartilhado/ITime";
 import Banner from "./componentes/Banner";
 import Formulario from "./componentes/Formulario";
 import Time from "./componentes/Time";
 import Rodape from "./componentes/Rodape";
-import { v4 as uuidv4 } from 'uuid';
-import { IColaborador } from "./componentes/compartilhado/IColaborador";
-import { ITime } from "./componentes/compartilhado/ITime";
 
 function App() {
 
@@ -301,7 +302,6 @@ function App() {
     setColaboradores(
       colaboradores.map((colaborador) => {
         if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
-        console.log(typeof(colaborador.id))
         return colaborador;
       })
     );
